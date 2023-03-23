@@ -94,6 +94,7 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         generatePassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         generatePassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
         generatePassphraseButton.setText("GENERATE PASSPHRASE");
+        generatePassphraseButton.setOpaque(true);
         generatePassphraseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generatePassphraseButtonActionPerformed(evt);
@@ -127,6 +128,7 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         generateTenPassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         generateTenPassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
         generateTenPassphraseButton.setText("GENERATE 10 PHRASES TO TXT");
+        generateTenPassphraseButton.setOpaque(true);
         generateTenPassphraseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generateTenPassphraseButtonActionPerformed(evt);
@@ -236,13 +238,17 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
 
     private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
         // TODO add your handling code here:
-        String str = resultTextField.getText();
-        Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();
-        StringSelection strse1 = new StringSelection(str);
-        clip.setContents(strse1, strse1);
-        responseLabel.setForeground(Color.green);
-        responseLabel.setText("PASSPHRASE HAS BEEN COPIED");
-
+        if(!resultTextField.getText().equals("")){
+            String str = resultTextField.getText();
+            Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();
+            StringSelection strse1 = new StringSelection(str);
+            clip.setContents(strse1, strse1);
+            responseLabel.setForeground(Color.green);
+            responseLabel.setText("PASSPHRASE HAS BEEN COPIED");
+        }else{
+            responseLabel.setForeground(Color.red);
+            responseLabel.setText("PASSPHRASE DIDNT CREATE");
+        }
     }//GEN-LAST:event_copyButtonActionPerformed
 
     private void resultTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultTextFieldActionPerformed
