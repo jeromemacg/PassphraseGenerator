@@ -94,6 +94,8 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         generatePassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         generatePassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
         generatePassphraseButton.setText("GENERATE PASSPHRASE");
+        generatePassphraseButton.setBorder(null);
+        generatePassphraseButton.setBorderPainted(false);
         generatePassphraseButton.setOpaque(true);
         generatePassphraseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +116,9 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         copyButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         copyButton.setForeground(new java.awt.Color(255, 255, 255));
         copyButton.setText("COPY");
+        copyButton.setBorder(null);
+        copyButton.setBorderPainted(false);
+        copyButton.setFocusPainted(false);
         copyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 copyButtonActionPerformed(evt);
@@ -128,6 +133,9 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         generateTenPassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         generateTenPassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
         generateTenPassphraseButton.setText("GENERATE 10 PHRASES TO TXT");
+        generateTenPassphraseButton.setBorder(null);
+        generateTenPassphraseButton.setBorderPainted(false);
+        generateTenPassphraseButton.setFocusPainted(false);
         generateTenPassphraseButton.setOpaque(true);
         generateTenPassphraseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
