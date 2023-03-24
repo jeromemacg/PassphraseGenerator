@@ -45,11 +45,11 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         tittleLabel = new javax.swing.JLabel();
         descriptionScrollPanel = new javax.swing.JScrollPane();
         descriptionTextArea = new javax.swing.JTextArea();
-        generatePassphraseButton = new javax.swing.JButton();
         resultTextField = new javax.swing.JTextField();
-        copyButton = new javax.swing.JButton();
         responseLabel = new javax.swing.JLabel();
+        generatePassphraseButton = new javax.swing.JButton();
         generateTenPassphraseButton = new javax.swing.JButton();
+        copyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Passphrase Generator");
@@ -90,19 +90,6 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
         descriptionTextArea.setFocusable(false);
         descriptionScrollPanel.setViewportView(descriptionTextArea);
 
-        generatePassphraseButton.setBackground(new java.awt.Color(0, 0, 155));
-        generatePassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        generatePassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
-        generatePassphraseButton.setText("GENERATE PASSPHRASE");
-        generatePassphraseButton.setBorder(null);
-        generatePassphraseButton.setBorderPainted(false);
-        generatePassphraseButton.setOpaque(true);
-        generatePassphraseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generatePassphraseButtonActionPerformed(evt);
-            }
-        });
-
         resultTextField.setEditable(false);
         resultTextField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         resultTextField.setAutoscrolls(false);
@@ -112,34 +99,28 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
             }
         });
 
-        copyButton.setBackground(new java.awt.Color(0, 0, 155));
-        copyButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        copyButton.setForeground(new java.awt.Color(255, 255, 255));
-        copyButton.setText("COPY");
-        copyButton.setBorder(null);
-        copyButton.setBorderPainted(false);
-        copyButton.setFocusPainted(false);
-        copyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copyButtonActionPerformed(evt);
-            }
-        });
-
         responseLabel.setBackground(new java.awt.Color(102, 0, 255));
         responseLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         responseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        generateTenPassphraseButton.setBackground(new java.awt.Color(0, 0, 155));
-        generateTenPassphraseButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        generateTenPassphraseButton.setForeground(new java.awt.Color(255, 255, 255));
-        generateTenPassphraseButton.setText("GENERATE 10 PHRASES TO TXT");
-        generateTenPassphraseButton.setBorder(null);
-        generateTenPassphraseButton.setBorderPainted(false);
-        generateTenPassphraseButton.setFocusPainted(false);
-        generateTenPassphraseButton.setOpaque(true);
+        generatePassphraseButton.setText("Generate Passphrase");
+        generatePassphraseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generatePassphraseButtonActionPerformed(evt);
+            }
+        });
+
+        generateTenPassphraseButton.setText("Generate 10 Passphrases To TXT");
         generateTenPassphraseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generateTenPassphraseButtonActionPerformed(evt);
+            }
+        });
+
+        copyButton.setText("Copy");
+        copyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyButtonActionPerformed(evt);
             }
         });
 
@@ -160,14 +141,14 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
                         .addGap(253, 253, 253))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(mainPanelLayout.createSequentialGroup()
-                                .addComponent(generatePassphraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(generateTenPassphraseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(descriptionScrollPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(generatePassphraseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(generateTenPassphraseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addComponent(resultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(32, 32, 32)
                                 .addComponent(copyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(65, 65, 65))))
         );
@@ -181,9 +162,9 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
                     .addComponent(iconLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(descriptionScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(generatePassphraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(generatePassphraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(generateTenPassphraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -207,6 +188,35 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void resultTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultTextFieldActionPerformed
+
+    private void generatePassphraseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePassphraseButtonActionPerformed
+        // TODO add your handling code here:
+        String word;
+        word = createPasswords();
+
+        resultTextField.setText(word);
+        responseLabel.setForeground(Color.white);
+        responseLabel.setText("NEW PASSPHRASE CREATED");
+    }//GEN-LAST:event_generatePassphraseButtonActionPerformed
+
+    private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
+        // TODO add your handling code here:
+        if(!resultTextField.getText().equals("")){
+            String str = resultTextField.getText();
+            Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();
+            StringSelection strse1 = new StringSelection(str);
+            clip.setContents(strse1, strse1);
+            responseLabel.setForeground(Color.green);
+            responseLabel.setText("PASSPHRASE HAS BEEN COPIED");
+        }else{
+            responseLabel.setForeground(Color.red);
+            responseLabel.setText("PASSPHRASE DIDNT CREATE");
+        }
+    }//GEN-LAST:event_copyButtonActionPerformed
 
     private void generateTenPassphraseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateTenPassphraseButtonActionPerformed
         // TODO add your handling code here:
@@ -243,35 +253,6 @@ public class TechwavePasswordGenerator extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_generateTenPassphraseButtonActionPerformed
-
-    private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
-        // TODO add your handling code here:
-        if(!resultTextField.getText().equals("")){
-            String str = resultTextField.getText();
-            Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();
-            StringSelection strse1 = new StringSelection(str);
-            clip.setContents(strse1, strse1);
-            responseLabel.setForeground(Color.green);
-            responseLabel.setText("PASSPHRASE HAS BEEN COPIED");
-        }else{
-            responseLabel.setForeground(Color.red);
-            responseLabel.setText("PASSPHRASE DIDNT CREATE");
-        }
-    }//GEN-LAST:event_copyButtonActionPerformed
-
-    private void resultTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resultTextFieldActionPerformed
-
-    private void generatePassphraseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePassphraseButtonActionPerformed
-        // TODO add your handling code here:
-        String word;
-        word = createPasswords();
-
-        resultTextField.setText(word);
-        responseLabel.setForeground(Color.white);
-        responseLabel.setText("NEW PASSPHRASE CREATED");
-    }//GEN-LAST:event_generatePassphraseButtonActionPerformed
 
     private void uploadData(){
         InputStream in =  getClass().getResourceAsStream("/resources/words.txt");
